@@ -1,0 +1,149 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color: #009688;">Purchase Margin Calculator</h2>
+        <h3 class="oe_slogan">Track real purchase cost, convert UoM automatically, and monitor margin health</h3>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 class="oe_slogan" style="color: #333;">The Problem</h3>
+            <p class="oe_mt32 text-center" style="font-size: 16px;">
+                You buy products in <strong>kg</strong> but sell them by <strong>unit</strong>.
+                Odoo shows you a cost per kg and a sale price per unit &mdash; comparing them gives you a <strong>meaningless margin</strong>.
+                Existing modules either only show cost on PO lines (not on the product), or worse,
+                <strong>overwrite standard_price</strong> breaking your AVCO/FIFO valuation.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #333;">Key Features</h3>
+        <div class="oe_span4">
+            <div class="text-center">
+                <span class="fa fa-exchange fa-3x" style="color: #009688;"></span>
+                <h4 class="oe_mt16">UoM Conversion</h4>
+                <p>Automatically converts purchase price to the product's sale UoM.
+                   Buy in kg, sell by unit &mdash; margin is always correct.</p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <span class="fa fa-shopping-cart fa-3x" style="color: #009688;"></span>
+                <h4 class="oe_mt16">POS Price Detection</h4>
+                <p>If Point of Sale is installed, uses the POS pricelist price for margin calculation.
+                   Works with and without POS &mdash; no extra dependency.</p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <span class="fa fa-line-chart fa-3x" style="color: #009688;"></span>
+                <h4 class="oe_mt16">Price History</h4>
+                <p>Keeps a rolling history of the last 10 purchases per product.
+                   See price trends, vendors, and UoM at a glance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span4">
+            <div class="text-center">
+                <span class="fa fa-traffic-light fa-3x" style="color: #009688;"></span>
+                <h4 class="oe_mt16">Margin Alerts</h4>
+                <p>Color-coded semaphore (OK / Warning / Critical / No Data) on every product.
+                   Configurable target factor per company in Settings.</p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <span class="fa fa-shield fa-3x" style="color: #009688;"></span>
+                <h4 class="oe_mt16">Safe &mdash; No Overwrites</h4>
+                <p><strong>Does NOT modify standard_price.</strong> Your inventory valuation
+                   (AVCO, FIFO, Standard) remains untouched. 100% safe.</p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <span class="fa fa-building fa-3x" style="color: #009688;"></span>
+                <h4 class="oe_mt16">Multi-Company</h4>
+                <p>Each company can set its own target margin factor.
+                   Purchase history is filtered by company.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #333;">How It Works</h3>
+        <div class="oe_span12">
+            <ol style="font-size: 15px; line-height: 2;">
+                <li>Confirm a Purchase Order &rarr; the module records the line price, vendor, UoM, and date.</li>
+                <li>The purchase price is <strong>converted</strong> to the product's sale UoM.</li>
+                <li>Margin is calculated against the <strong>effective sale price</strong> (POS pricelist or list price).</li>
+                <li>A <strong>suggested price</strong> is computed using your configured margin factor.</li>
+                <li>The semaphore alerts you immediately if margin is below target.</li>
+                <li>A scheduled cron (every 6 hours) keeps all products up to date.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #333;">Product Form &mdash; New Tab</h3>
+        <p class="text-center" style="font-size: 15px;">
+            A dedicated <strong>"Purchase Cost &amp; Margin"</strong> tab is added to every product,
+            showing last purchase info, margin analysis with semaphore, and price history table.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #333;">Tree View Columns</h3>
+        <p class="text-center" style="font-size: 15px;">
+            Optional columns in the product list: <strong>Last Cost</strong>, <strong>Suggested Price</strong>,
+            <strong>Margin %</strong>, and <strong>Alert</strong>. Enable them via the column selector.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #333;">Configuration</h3>
+        <p class="text-center" style="font-size: 15px;">
+            Go to <strong>Settings &gt; Purchase</strong> and set your <strong>Target Margin Factor</strong>.
+            Default is 1.30 (30% margin). Change it per company as needed.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #333;">Technical Details</h3>
+        <ul style="font-size: 14px; line-height: 1.8;">
+            <li><strong>Odoo Version:</strong> 19.0 (Community &amp; Enterprise)</li>
+            <li><strong>Dependencies:</strong> product, purchase</li>
+            <li><strong>Optional:</strong> point_of_sale (auto-detected, not required)</li>
+            <li><strong>New model:</strong> purchase.price.history</li>
+            <li><strong>Cron:</strong> Batch recalculation every 6 hours</li>
+            <li><strong>Post-install hook:</strong> Populates history from existing POs automatically</li>
+            <li><strong>License:</strong> OPL-1</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 class="oe_slogan" style="color: #009688;">Support</h3>
+        <p class="text-center" style="font-size: 15px;">
+            Need help? Contact us at <strong>neurodev.odoo@gmail.com</strong>
+        </p>
+    </div>
+</section>

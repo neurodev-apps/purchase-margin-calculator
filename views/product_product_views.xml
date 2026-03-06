@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Product Variant Tree: extra columns (optional=hide) -->
+    <record id="product_product_tree_view_purchase_margin" model="ir.ui.view">
+        <field name="name">product.product.list.purchase.margin</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lst_price']" position="after">
+                <field name="last_cost_converted" string="Last Cost" optional="hide"/>
+                <field name="suggested_price" string="Suggested" optional="hide"/>
+                <field name="margin_percent" string="Margin %" optional="hide"/>
+                <field name="price_alert" string="Alert" optional="hide"
+                       widget="badge"
+                       decoration-success="price_alert == 'ok'"
+                       decoration-warning="price_alert == 'warning'"
+                       decoration-danger="price_alert == 'critical'"
+                       decoration-muted="price_alert == 'no_data'"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
