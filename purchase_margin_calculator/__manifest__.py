@@ -6,7 +6,7 @@
                    'price history tracking, and configurable margin alerts. '
                    'Does NOT overwrite standard_price.',
     'author': 'NeuroDev',
-    'website': 'https://github.com/neurodev',
+    'website': 'https://github.com/neurodev-apps',
     'license': 'OPL-1',
     'price': 29.00,
     'currency': 'EUR',
