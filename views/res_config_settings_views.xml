@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_purchase_margin" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.purchase.margin</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='purchase']" position="inside">
+                <block title="Purchase Margin Calculator" name="purchase_margin_calculator">
+                    <setting string="Target Margin Factor"
+                             help="Minimum multiplier over purchase cost for healthy margin. Example: 1.30 = price should be at least 130% of cost.">
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="purchase_margin_factor" class="col-lg-4 o_light_label"/>
+                                <field name="purchase_margin_factor"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

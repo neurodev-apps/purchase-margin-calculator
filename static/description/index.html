@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #714B67, #8F5C7C); color: white; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
+        .header h1 { margin: 0 0 10px 0; font-size: 28px; }
+        .header p { margin: 0; font-size: 16px; opacity: 0.9; }
+        .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-top: 10px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #714B67; border-bottom: 2px solid #714B67; padding-bottom: 8px; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .feature { background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #714B67; }
+        .feature h3 { margin: 0 0 8px 0; color: #714B67; font-size: 15px; }
+        .feature p { margin: 0; font-size: 13px; color: #666; }
+        .alert-demo { display: flex; gap: 10px; margin: 15px 0; }
+        .alert-badge { padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: bold; }
+        .alert-ok { background: #d4edda; color: #155724; }
+        .alert-warning { background: #fff3cd; color: #856404; }
+        .alert-critical { background: #f8d7da; color: #721c24; }
+        .alert-nodata { background: #e2e3e5; color: #383d41; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; font-size: 14px; }
+        .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; border-top: 1px solid #eee; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Purchase Margin Calculator</h1>
+            <p>Track last purchase cost, UoM conversion, and real margin on products</p>
+            <span class="badge">Odoo Version: 17.0</span>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Last Purchase Cost Tracking</h3>
+                    <p>Automatically captures the last purchase price, vendor, date, and order reference when a PO is confirmed.</p>
+                </div>
+                <div class="feature">
+                    <h3>UoM Conversion</h3>
+                    <p>Converts purchase cost to sale UoM automatically. Buy in kg, sell in units — the margin is calculated correctly.</p>
+                </div>
+                <div class="feature">
+                    <h3>Real Margin Calculation</h3>
+                    <p>Computes margin using the effective sale price (POS pricelist or list price) vs. the converted purchase cost.</p>
+                </div>
+                <div class="feature">
+                    <h3>Price Alerts</h3>
+                    <p>Visual badges (OK, Warning, Critical) based on a configurable margin factor to quickly spot underpriced products.</p>
+                </div>
+                <div class="feature">
+                    <h3>Purchase Price History</h3>
+                    <p>Keeps the last 10 purchase prices per product with vendor, date, UoM, and converted price for trend analysis.</p>
+                </div>
+                <div class="feature">
+                    <h3>Suggested Price</h3>
+                    <p>Calculates a suggested minimum sale price based on the margin factor (e.g., cost x 1.30 for 30% margin).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Price Alert Levels</h2>
+            <div class="alert-demo">
+                <span class="alert-badge alert-ok">OK</span>
+                <span class="alert-badge alert-warning">Warning</span>
+                <span class="alert-badge alert-critical">Critical</span>
+                <span class="alert-badge alert-nodata">No Data</span>
+            </div>
+            <ul>
+                <li><strong>OK:</strong> Sale price meets or exceeds the suggested price (cost x factor)</li>
+                <li><strong>Warning:</strong> Sale price is above cost +10% but below the suggested price</li>
+                <li><strong>Critical:</strong> Sale price is below cost +10% — margin is dangerously low</li>
+                <li><strong>No Data:</strong> No purchase history or no sale price configured</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <ul>
+                <li>On PO confirmation, the module captures the purchase price and records it in the history.</li>
+                <li>A daily cron job recalculates costs for all purchasable products.</li>
+                <li>The margin factor is configurable in Purchase Settings (default: 1.30 = 30% margin).</li>
+                <li>New "Purchase Cost &amp; Margin" tab on product form shows all data at a glance.</li>
+                <li>Optional columns on product list view: Last Cost, Suggested Price, Margin %, Alert.</li>
+                <li>Search filters for Critical, Warning, OK, and No Data products.</li>
+                <li>Does NOT overwrite standard_price — safe to use alongside standard costing methods.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Configuration</h2>
+            <ul>
+                <li>Go to <strong>Purchase &gt; Settings</strong></li>
+                <li>Find the <strong>Purchase Margin Calculator</strong> section</li>
+                <li>Set the <strong>Target Margin Factor</strong> (default 1.30)</li>
+                <li>The module auto-populates history from existing confirmed POs on install</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Purchase Margin Calculator &mdash; by NeuroDev</p>
+        </div>
+    </div>
+</body>
+</html>
