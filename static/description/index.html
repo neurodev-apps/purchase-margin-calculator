@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { color: #875A7B; border-bottom: 2px solid #875A7B; padding-bottom: 10px; }
+        h2 { color: #875A7B; margin-top: 30px; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 3px; color: white; font-size: 13px; }
+        .badge-success { background: #28a745; }
+        .badge-warning { background: #ffc107; color: #333; }
+        .badge-danger { background: #dc3545; }
+        .badge-secondary { background: #6c757d; }
+        .feature { margin: 15px 0; padding: 15px; background: #f8f9fa; border-left: 4px solid #875A7B; border-radius: 4px; }
+        .info-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .info-table td { padding: 8px 12px; border: 1px solid #dee2e6; }
+        .info-table td:first-child { font-weight: bold; background: #f8f9fa; width: 200px; }
+        ul { line-height: 1.8; }
+        .alert { padding: 12px 15px; border-radius: 4px; margin: 15px 0; }
+        .alert-info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+        .alert-success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Purchase Margin Calculator</h1>
+    <p>Track the real purchase cost, convert between UoMs, and monitor margin health on every product.</p>
+
+    <table class="info-table">
+        <tr><td>Odoo Version</td><td>16.0</td></tr>
+        <tr><td>License</td><td>OPL-1</td></tr>
+        <tr><td>Author</td><td>NeuroDev</td></tr>
+        <tr><td>Category</td><td>Inventory / Purchase</td></tr>
+        <tr><td>Dependencies</td><td>product, purchase</td></tr>
+    </table>
+
+    <h2>Key Features</h2>
+
+    <div class="feature">
+        <strong>Last Purchase Cost Tracking</strong><br/>
+        Automatically captures the last confirmed purchase price, vendor, date, and UoM for each product.
+    </div>
+
+    <div class="feature">
+        <strong>UoM Conversion</strong><br/>
+        If the purchase UoM differs from the sale UoM (e.g., buy in kg, sell in units), the cost is
+        automatically converted so the margin comparison is apples-to-apples.
+    </div>
+
+    <div class="feature">
+        <strong>Margin Analysis &amp; Alerts</strong><br/>
+        Computes the effective sale price (POS pricelist or list price), calculates margin %,
+        and flags products with color-coded alerts:<br/><br/>
+        <span class="badge badge-success">OK</span> Healthy margin (above target factor)<br/>
+        <span class="badge badge-warning">Warning</span> Margin below target but above 10%<br/>
+        <span class="badge badge-danger">Critical</span> Margin below 10% of cost<br/>
+        <span class="badge badge-secondary">No Data</span> No purchase history yet
+    </div>
+
+    <div class="feature">
+        <strong>Purchase Price History</strong><br/>
+        Keeps the last 10 purchase entries per product with date, vendor, order reference, original price,
+        purchase UoM, and converted price. Populated automatically on install from existing confirmed POs.
+    </div>
+
+    <div class="feature">
+        <strong>Configurable Margin Factor</strong><br/>
+        Set the target margin factor in Purchase Settings (default 1.30 = 30% markup). The suggested price
+        and alert thresholds adjust automatically.
+    </div>
+
+    <div class="feature">
+        <strong>Daily Cron Recalculation</strong><br/>
+        A scheduled action recalculates costs and alerts daily. You can also trigger a manual recalculation
+        from any product form.
+    </div>
+
+    <div class="alert alert-info">
+        <strong>Safe by design:</strong> This module does NOT overwrite <code>standard_price</code>. Your
+        existing costing method (FIFO, Average, Standard) remains untouched.
+    </div>
+
+    <h2>Where to find it</h2>
+    <ul>
+        <li><strong>Product form</strong> &rarr; new tab <em>Purchase Cost &amp; Margin</em></li>
+        <li><strong>Product list</strong> &rarr; optional columns: Last Cost, Suggested, Margin %, Alert</li>
+        <li><strong>Search filters</strong> &rarr; Critical Margin, Warning Margin, Healthy Margin, No Purchase Data</li>
+        <li><strong>Settings</strong> &rarr; Purchase &rarr; Purchase Margin Calculator section</li>
+    </ul>
+
+    <div class="alert alert-success">
+        <strong>Multi-company ready.</strong> Price history records respect company security rules.
+    </div>
+</div>
+</body>
+</html>
