@@ -53,7 +53,7 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span4">
             <div class="text-center">
-                <span class="fa fa-traffic-light fa-3x" style="color: #009688;"></span>
+                <span class="fa fa-exclamation-triangle fa-3x" style="color: #009688;"></span>
                 <h4 class="oe_mt16">Margin Alerts</h4>
                 <p>Color-coded semaphore (OK / Warning / Critical / No Data) on every product.
                    Configurable target factor per company in Settings.</p>
@@ -88,7 +88,7 @@
                 <li>Margin is calculated against the <strong>effective sale price</strong> (POS pricelist or list price).</li>
                 <li>A <strong>suggested price</strong> is computed using your configured margin factor.</li>
                 <li>The semaphore alerts you immediately if margin is below target.</li>
-                <li>A scheduled cron (every 6 hours) keeps all products up to date.</li>
+                <li>A scheduled cron keeps all products up to date.</li>
             </ol>
         </div>
     </div>
@@ -101,16 +101,22 @@
             A dedicated <strong>"Purchase Cost &amp; Margin"</strong> tab is added to every product,
             showing last purchase info, margin analysis with semaphore, and price history table.
         </p>
+        <div class="oe_span12">
+            <img class="oe_picture oe_screenshot" src="screenshot_form.png"/>
+        </div>
     </div>
 </section>
 
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
-        <h3 class="oe_slogan" style="color: #333;">Tree View Columns</h3>
+        <h3 class="oe_slogan" style="color: #333;">Product List &mdash; At-a-Glance Columns</h3>
         <p class="text-center" style="font-size: 15px;">
             Optional columns in the product list: <strong>Last Cost</strong>, <strong>Suggested Price</strong>,
             <strong>Margin %</strong>, and <strong>Alert</strong>. Enable them via the column selector.
         </p>
+        <div class="oe_span12">
+            <img class="oe_picture oe_screenshot" src="screenshot_list.png"/>
+        </div>
     </div>
 </section>
 
@@ -121,6 +127,9 @@
             Go to <strong>Settings &gt; Purchase</strong> and set your <strong>Target Margin Factor</strong>.
             Default is 1.30 (30% margin). Change it per company as needed.
         </p>
+        <div class="oe_span12">
+            <img class="oe_picture oe_screenshot" src="screenshot_settings.png"/>
+        </div>
     </div>
 </section>
 
@@ -128,11 +137,11 @@
     <div class="oe_row oe_spaced">
         <h3 class="oe_slogan" style="color: #333;">Technical Details</h3>
         <ul style="font-size: 14px; line-height: 1.8;">
-            <li><strong>Odoo Version:</strong> 18.0 (Community &amp; Enterprise)</li>
+            <li><strong>Supported Versions:</strong> 16.0, 17.0, 18.0, 19.0 (Community &amp; Enterprise)</li>
             <li><strong>Dependencies:</strong> product, purchase</li>
             <li><strong>Optional:</strong> point_of_sale (auto-detected, not required)</li>
             <li><strong>New model:</strong> purchase.price.history</li>
-            <li><strong>Cron:</strong> Batch recalculation every 6 hours</li>
+            <li><strong>Cron:</strong> Batch recalculation daily</li>
             <li><strong>Post-install hook:</strong> Populates history from existing POs automatically</li>
             <li><strong>License:</strong> OPL-1</li>
         </ul>
