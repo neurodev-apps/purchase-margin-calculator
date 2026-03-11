@@ -1,0 +1,172 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * purchase_margin_calculator
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-05 00:00+0000\n"
+"PO-Revision-Date: 2026-03-05 00:00+0000\n"
+"Last-Translator: NeuroDev\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_res_config_settings__purchase_margin_factor
+msgid "Target Margin Factor"
+msgstr "Factor de Margen Objetivo"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__last_purchase_price
+msgid "Last Purchase Price"
+msgstr "Ultimo Precio de Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__last_purchase_date
+msgid "Last Purchase Date"
+msgstr "Fecha Ultima Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__last_purchase_vendor_id
+msgid "Last Vendor"
+msgstr "Ultimo Proveedor"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__last_purchase_uom_id
+msgid "Purchase UoM"
+msgstr "UdM de Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__last_purchase_order_id
+msgid "Last Purchase Order"
+msgstr "Ultima Orden de Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__last_cost_converted
+msgid "Last Cost (Sale UoM)"
+msgstr "Ultimo Costo (UdM Venta)"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__effective_sale_price
+msgid "Effective Sale Price"
+msgstr "Precio de Venta Efectivo"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__margin_percent
+msgid "Margin %"
+msgstr "Margen %"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__suggested_price
+msgid "Suggested Price"
+msgstr "Precio Sugerido"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__price_alert
+msgid "Price Alert"
+msgstr "Alerta de Precio"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__margin_vs_list
+msgid "Margin vs List"
+msgstr "Margen vs Lista"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_product_template__purchase_price_history_ids
+msgid "Purchase Price History"
+msgstr "Historial de Precios de Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,selection:purchase_margin_calculator.field_product_template__price_alert__ok
+msgid "OK"
+msgstr "OK"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,selection:purchase_margin_calculator.field_product_template__price_alert__warning
+msgid "Warning"
+msgstr "Advertencia"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,selection:purchase_margin_calculator.field_product_template__price_alert__critical
+msgid "Critical"
+msgstr "Critico"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,selection:purchase_margin_calculator.field_product_template__price_alert__no_data
+msgid "No Data"
+msgstr "Sin Datos"
+
+#. module: purchase_margin_calculator
+#: model:ir.model,name:purchase_margin_calculator.model_purchase_price_history
+msgid "Purchase Price History"
+msgstr "Historial de Precios de Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_purchase_price_history__price_unit
+msgid "Unit Price"
+msgstr "Precio Unitario"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_purchase_price_history__converted_price
+msgid "Converted Price"
+msgstr "Precio Convertido"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_purchase_price_history__vendor_id
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: purchase_margin_calculator
+#: model:ir.model.fields,field_description:purchase_margin_calculator.field_purchase_price_history__order_id
+msgid "Purchase Order"
+msgstr "Orden de Compra"
+
+#. module: purchase_margin_calculator
+#: model:ir.cron,name:purchase_margin_calculator.ir_cron_update_purchase_costs
+msgid "Purchase Margin: Recalculate Costs"
+msgstr "Margen Compra: Recalcular Costos"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_form_view_purchase_margin
+msgid "Recalculate"
+msgstr "Recalcular"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_form_view_purchase_margin
+msgid "Last Purchase Info"
+msgstr "Info Ultima Compra"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_form_view_purchase_margin
+msgid "Margin Analysis"
+msgstr "Analisis de Margen"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_form_view_purchase_margin
+msgid "Price History (last 10 purchases)"
+msgstr "Historial de Precios (ultimas 10 compras)"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_search_view_purchase_margin
+msgid "Critical Margin"
+msgstr "Margen Critico"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_search_view_purchase_margin
+msgid "Warning Margin"
+msgstr "Margen en Advertencia"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_search_view_purchase_margin
+msgid "Healthy Margin"
+msgstr "Margen Saludable"
+
+#. module: purchase_margin_calculator
+#: model_terms:ir.ui.view,arch_db:purchase_margin_calculator.product_template_search_view_purchase_margin
+msgid "No Purchase Data"
+msgstr "Sin Datos de Compra"

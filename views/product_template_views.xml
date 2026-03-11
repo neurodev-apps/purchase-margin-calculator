@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================================ -->
+    <!-- Product Template Form: Tab "Purchase Cost & Margin"      -->
+    <!-- ============================================================ -->
+    <record id="product_template_form_view_purchase_margin" model="ir.ui.view">
+        <field name="name">product.template.form.purchase.margin</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='purchase']" position="after">
+                <page string="Purchase Cost &amp; Margin" name="purchase_margin">
+                    <div class="oe_button_box mb-3" name="margin_button_box">
+                        <button name="action_recalculate_purchase_cost"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-refresh"
+                                string="Recalculate"/>
+                    </div>
+
+                    <!-- Section 1: Last Purchase Info -->
+                    <group string="Last Purchase Info">
+                        <group>
+                            <field name="last_purchase_price" readonly="1"/>
+                            <field name="last_purchase_uom_id" readonly="1"/>
+                            <field name="last_purchase_date" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="last_purchase_vendor_id" readonly="1"/>
+                            <field name="last_purchase_order_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <!-- Section 2: Margin Analysis -->
+                    <group string="Margin Analysis">
+                        <group>
+                            <field name="last_cost_converted" readonly="1"/>
+                            <field name="effective_sale_price" readonly="1"/>
+                            <field name="margin_percent" widget="float" string="Margin %" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="suggested_price" readonly="1"/>
+                            <field name="price_alert" widget="badge" readonly="1"
+                                   decoration-success="price_alert == 'ok'"
+                                   decoration-warning="price_alert == 'warning'"
+                                   decoration-danger="price_alert == 'critical'"
+                                   decoration-muted="price_alert == 'no_data'"/>
+                            <field name="margin_vs_list" widget="float" string="Margin vs List %" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <!-- Section 3: Price History -->
+                    <group string="Price History (last 10 purchases)">
+                        <field name="purchase_price_history_ids" nolabel="1"
+                               readonly="1">
+                            <list>
+                                <field name="date"/>
+                                <field name="vendor_id"/>
+                                <field name="order_id"/>
+                                <field name="price_unit"/>
+                                <field name="uom_id"/>
+                                <field name="converted_price"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Product Template Tree: extra columns (optional=hide)         -->
+    <!-- ============================================================ -->
+    <record id="product_template_tree_view_purchase_margin" model="ir.ui.view">
+        <field name="name">product.template.list.purchase.margin</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                <field name="last_cost_converted" string="Last Cost" optional="hide"/>
+                <field name="suggested_price" string="Suggested" optional="hide"/>
+                <field name="margin_percent" string="Margin %" optional="hide"/>
+                <field name="price_alert" string="Alert" optional="hide"
+                       widget="badge"
+                       decoration-success="price_alert == 'ok'"
+                       decoration-warning="price_alert == 'warning'"
+                       decoration-danger="price_alert == 'critical'"
+                       decoration-muted="price_alert == 'no_data'"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ============================================================ -->
+    <!-- Search: filter by alert level                                -->
+    <!-- ============================================================ -->
+    <record id="product_template_search_view_purchase_margin" model="ir.ui.view">
+        <field name="name">product.template.search.purchase.margin</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <separator/>
+                <filter name="alert_critical" string="Critical Margin"
+                        domain="[('price_alert', '=', 'critical')]"/>
+                <filter name="alert_warning" string="Warning Margin"
+                        domain="[('price_alert', '=', 'warning')]"/>
+                <filter name="alert_ok" string="Healthy Margin"
+                        domain="[('price_alert', '=', 'ok')]"/>
+                <filter name="alert_no_data" string="No Purchase Data"
+                        domain="[('price_alert', '=', 'no_data')]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
