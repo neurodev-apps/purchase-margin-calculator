@@ -7,9 +7,10 @@
                    'Does NOT overwrite standard_price.',
     'author': 'NeuroDev',
     'website': 'https://github.com/neurodev-apps',
+    'support': 'neurodev.odoo@gmail.com',
     'license': 'OPL-1',
-    'price': 29.00,
-    'currency': 'EUR',
+    'price': 34.00,
+    'currency': 'USD',
     'category': 'Inventory/Purchase',
     'depends': ['product', 'purchase'],
     'data': [
