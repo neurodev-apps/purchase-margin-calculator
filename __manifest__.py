@@ -1,4 +1,4 @@
-{
+﻿{
     'name': 'Purchase Margin Calculator',
     'version': '19.0.1.0.0',
     'summary': 'Track last purchase cost, UoM conversion, and real margin on products',
@@ -10,7 +10,7 @@
     'support': 'contacto@neurodev.cl',
     'license': 'OPL-1',
     'price': 29.00,
-    'currency': 'EUR',
+    'currency': 'USD',
     'category': 'Inventory/Purchase',
     'depends': ['product', 'purchase'],
     'data': [
@@ -21,7 +21,7 @@
         'views/product_template_views.xml',
         'views/product_product_views.xml',
     ],
-    'images': ['static/description/icon.png'],
+    'images': ['static/description/banner.png'],
     'installable': True,
     'application': False,
     'auto_install': False,
