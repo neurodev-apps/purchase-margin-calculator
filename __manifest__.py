@@ -1,4 +1,5 @@
-﻿{
+# -*- coding: utf-8 -*-
+{
     'name': 'Purchase Margin Calculator',
     'version': '19.0.1.0.0',
     'summary': 'Track last purchase cost, UoM conversion, and real margin on products',
