@@ -9,7 +9,7 @@
     'website': 'https://neurodev.cl',
     'support': 'contacto@neurodev.cl',
     'license': 'OPL-1',
-    'price': 29.00,
+    'price': 34.00,
     'currency': 'USD',
     'category': 'Inventory/Purchase',
     'depends': ['product', 'purchase'],
